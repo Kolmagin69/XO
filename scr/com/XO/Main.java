@@ -1,9 +1,8 @@
 package com.XO;
-
-import com.XO.model.Figure;
+import com.XO.model.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(Figure.X.toString() + "89");
+        System.out.println();
     }
 }
