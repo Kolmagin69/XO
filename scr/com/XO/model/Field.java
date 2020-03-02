@@ -1,9 +1,11 @@
 package com.XO.model;
-import java.awt.Point;
+
+
+import com.XO.model.exceptions.IncorrectCoordinatException;
 
 public class Field {
-    private int size;
-    private Figure[][] figures;
+    private final int size;
+    private final Figure[][] figures;
     private Point point;
 
 
@@ -16,7 +18,8 @@ public class Field {
         return size;
     }
 
-    public void setFigures(final Point point, final Figure figure) {
+    public void setFigures(final Point point, final Figure figure) throws IncorrectCoordinatException {
+        if(getFigure(point) != null) throw new IncorrectCoordinatException("The field is not free, try another point");
         figures[(int) point.getX()][(int) point.getY()] = figure;
     }
 
@@ -28,6 +31,8 @@ public class Field {
     public Figure[][] getFigures() {
         return figures;
     }
+
+
 
 
 }
