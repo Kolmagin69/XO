@@ -6,6 +6,7 @@ import com.XO.model.*;
 public class Show {
 
     private static final String crossLine = "-------------\n";
+
     public static void ShowField(final Field field) {
         StringBuilder strLocal1 = new StringBuilder(crossLine);
         for (int j = 0; j < field.getSize() ; j++) {
@@ -13,6 +14,7 @@ public class Show {
         }
         System.out.println(strLocal1);
     }
+
     private static String horizontalLine(final int a, final Field field) {
         Figure[][] figureLocal = field.getFigures();
         StringBuilder strLocal = new StringBuilder("|");
