@@ -1,7 +1,7 @@
 package com.XO.model;
 
 
-import com.XO.model.exceptions.IncorrectCoordinatException;
+import com.XO.model.exceptions.*;
 
 public class Field {
     private final int size;
@@ -18,9 +18,15 @@ public class Field {
         return size;
     }
 
-    public void setFigures(final Point point, final Figure figure) throws IncorrectCoordinatException {
-        if(getFigure(point) != null) throw new IncorrectCoordinatException("The field is not free, try another point");
-        figures[(int) point.getX()][(int) point.getY()] = figure;
+    public void setFigures(final Point point, final Figure figure)
+            throws IncorrectCoordinatException, IncorrectFigureException {
+        if(getFigure(point) != null)
+            throw new IncorrectCoordinatException
+                    ("\n\"The field is not free!\"\n\"Try another point.\"");
+        if(figure == null)
+            throw new IncorrectFigureException
+                    ("\n\"You can\'t put \"null\" in to the field!\"\n\"Try \"Figure.X\" or \"Figure.O\"\"");
+        figures[point.getX()][point.getY()] = figure;
     }
 
     public Figure getFigure(final  Point point) {
