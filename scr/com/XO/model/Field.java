@@ -29,7 +29,7 @@ public class Field {
         figures[point.getX()][point.getY()] = figure;
     }
 
-    public Figure getFigure(final  Point point) {
+    public Figure getFigure(final Point point) {
         return figures[point.getX()][point.getY()];
 
     }

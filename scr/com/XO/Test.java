@@ -36,6 +36,8 @@ public class Test {
                 .build();
 
        Show.ShowField((field));
+       field.getFigure(null);
+
 
 
     }
