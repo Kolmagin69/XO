@@ -30,7 +30,7 @@ public class Field {
     }
 
     public Figure getFigure(final  Point point) {
-        return figures[(int) point.getX()][(int) point.getY()];
+        return figures[point.getX()][point.getY()];
 
     }
 
