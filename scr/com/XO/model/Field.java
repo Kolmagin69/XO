@@ -6,7 +6,7 @@ import com.XO.model.exceptions.*;
 public class Field {
     private final int size;
     private final Figure[][] figures;
-    private Point point;
+
 
 
     public Field(int size) {

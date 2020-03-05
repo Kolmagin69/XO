@@ -29,7 +29,7 @@ public class Player {
     public Figure getFigure() {
         return figure;
     }
-    public static boolean checkName(String name) {
+    public boolean checkName(String name) {
         if(name == null || name.isEmpty() || name.trim().isEmpty()) return false;
         return true;
     }
