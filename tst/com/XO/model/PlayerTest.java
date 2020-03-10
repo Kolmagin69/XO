@@ -48,7 +48,7 @@ class PlayerTest {
     @Test
     void testFailIfNoCharactersName() {
         try {
-            final Player valuePlayer = new Player(null, Figure.X);
+            final Player valuePlayer = new Player("   ", Figure.X);
             fail();
         } catch (IncorrectNameException e) {}
     }
@@ -57,7 +57,7 @@ class PlayerTest {
     void testCheckName() {
         final String inputValue = "Black Man";
 
-        final Player valuePlayer= new Player(inputValue, Figure.X);
+        final Player valuePlayer = new Player(inputValue, Figure.X);
 
         assertTrue(valuePlayer.checkName(inputValue));
         assertFalse(valuePlayer.checkName(null));
