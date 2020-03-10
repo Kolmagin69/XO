@@ -17,6 +17,7 @@ class GameTest {
             .name(expectedName)
             .build();
 
+
     @Test
     void testGetPlayerOne() {
         final Player actualPlayerX = expectedGame.getPlayerOne();
