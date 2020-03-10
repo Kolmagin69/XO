@@ -1,5 +1,6 @@
 package com.XO;
 
+import com.XO.controller.MoveController;
 import com.XO.model.*;
 import com.XO.model.Point;
 import com.XO.view.*;
@@ -14,12 +15,14 @@ public class Test {
         field.setFigures(Point.X0_Y0, Figure.X);
         field.setFigures(Point.X0_Y1, Figure.O);
         field.setFigures(Point.X0_Y2, Figure.X);
-        field.setFigures(Point.X1_Y0, Figure.O);
-        field.setFigures(Point.X1_Y1, Figure.X);
-        field.setFigures(Point.X1_Y2, Figure.O);
-        field.setFigures(Point.X2_Y0, Figure.X);
-        field.setFigures(Point.X2_Y1, Figure.O);
-        field.setFigures(Point.X2_Y2, Figure.X);
+//        field.setFigures(Point.X1_Y0, Figure.O);
+//        field.setFigures(Point.X1_Y1, Figure.X);
+//        field.setFigures(Point.X1_Y2, Figure.O);
+//        field.setFigures(Point.X2_Y0, Figure.X);
+//        field.setFigures(Point.X2_Y1, Figure.O);
+//        field.setFigures(Point.X2_Y2, Figure.X);
+        MoveController move = new MoveController();
+        System.out.println(move.currentFigure(field).toString());
 
 //
 //        final Player playerX = new Player("Nikita", Figure.X);
@@ -30,13 +33,13 @@ public class Test {
 //                .setPlayerTwo(playerO)
 //                .setField(field)
 //                .build();
-//        Show.ShowField(field);
-        Game myGame = new Game.Builder()
-                .field(field)
-                .build();
-
-       Show.ShowField((field));
-       //field.getFigure(null);
+////        Show.ShowField(field);
+//        Game myGame = new Game.Builder()
+//                .field(field)
+//                .build();
+//
+//       Show.ShowField((field));
+//       //field.getFigure(null);
 
 
 
