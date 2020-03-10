@@ -26,4 +26,19 @@ public enum Point {
     public int getY() {
         return y;
     }
+
+    public static Point getPoint(final int x, final int y) {
+
+        if(x == 0 && y ==0) return X0_Y0;
+        if(x == 0 && y ==1) return X0_Y1;
+        if(x == 0 && y ==2) return X0_Y2;
+        if(x == 1 && y ==0) return X1_Y0;
+        if(x == 1 && y ==1) return X1_Y1;
+        if(x == 1 && y ==2) return X1_Y2;
+        if(x == 2 && y ==0) return X2_Y0;
+        if(x == 2 && y ==1) return X2_Y1;
+        if(x == 2 && y ==2) return X2_Y2;
+        return  null;
+    }
+
 }
