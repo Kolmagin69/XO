@@ -46,19 +46,7 @@ class FieldTest {
 
     }
 
-    @Test
-    void testFailSetFigure_IfPointIsBusy() {
-        final Field field = new Field(3);
-        field.setFigures(Point.X0_Y0, Figure.X);
 
-        try {
-            field.setFigures(Point.X0_Y0, Figure.X);
-            fail();
-        } catch (IncorrectCoordinatException e) {
-
-        }
-
-    }
 
     @Test
     void getFigure() {

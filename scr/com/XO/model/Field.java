@@ -19,10 +19,8 @@ public class Field {
     }
 
     public void setFigures(final Point point, final Figure figure)
-            throws IncorrectCoordinatException, IncorrectFigureException {
-        if(getFigure(point) != null)
-            throw new IncorrectCoordinatException
-                    ("\n\"The field is not free!\"\n\"Try another point.\"");
+            throws IncorrectCoordinatException {
+
         if(figure == null)
             throw new IncorrectFigureException
                     ("\n\"You can\'t put \"null\" in to the field!\"\n\"Try \"Figure.X\" or \"Figure.O\"\"");
