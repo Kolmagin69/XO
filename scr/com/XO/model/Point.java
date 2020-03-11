@@ -1,5 +1,7 @@
 package com.XO.model;
 
+import com.XO.model.exceptions.IncorrectCoordinatException;
+
 public enum Point {
     X0_Y0(0, 0),
     X0_Y1(0, 1),
@@ -27,8 +29,12 @@ public enum Point {
         return y;
     }
 
-    public static Point getPoint(final int x, final int y) {
+    public static Point getPoint(final int x, final int y)
+            throws IncorrectCoordinatException {
 
+        if(x < 0 || x > 3 || y < 0 || y > 3) {
+            throw new IncorrectCoordinatException("\n\"Invalid values!\"\n\"Possible values: x,y - 0, 1, 2.\"");
+        }
         if(x == 0 && y ==0) return X0_Y0;
         if(x == 0 && y ==1) return X0_Y1;
         if(x == 0 && y ==2) return X0_Y2;
@@ -37,8 +43,6 @@ public enum Point {
         if(x == 1 && y ==2) return X1_Y2;
         if(x == 2 && y ==0) return X2_Y0;
         if(x == 2 && y ==1) return X2_Y1;
-        if(x == 2 && y ==2) return X2_Y2;
-        return  null;
+        return X2_Y2;
     }
-
 }
