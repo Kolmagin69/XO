@@ -1,5 +1,6 @@
 package com.XO.model;
 
+import com.XO.model.exceptions.IncorrectCoordinatException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,4 +72,57 @@ class PointTest {
 
 
     }
+
+    @Test
+    void testGetPoint() {
+        final Point actual00 = Point.getPoint(0,0);
+        final Point actual01 = Point.getPoint(0,1);
+        final Point actual02 = Point.getPoint(0,2);
+        final Point actual10 = Point.getPoint(1,0);
+        final Point actual11 = Point.getPoint(1,1);
+        final Point actual12 = Point.getPoint(1,2);
+        final Point actual20 = Point.getPoint(2,0);
+        final Point actual21 = Point.getPoint(2,1);
+        final Point actual22 = Point.getPoint(2,2);
+
+        assertEquals(Point.X0_Y0, actual00);
+        assertEquals(Point.X0_Y1, actual01);
+        assertEquals(Point.X0_Y2, actual02);
+        assertEquals(Point.X1_Y0, actual10);
+        assertEquals(Point.X1_Y1, actual11);
+        assertEquals(Point.X1_Y2, actual12);
+        assertEquals(Point.X2_Y0, actual20);
+        assertEquals(Point.X2_Y1, actual21);
+        assertEquals(Point.X2_Y2, actual22);
+    }
+
+    @Test
+    void testFailIfXIsLessThan0() {
+        try {
+            Point.getPoint(-6, 2);
+            fail();
+        } catch (IncorrectCoordinatException e) {}
+    }
+    @Test
+    void testFailIfYIsLessThan0() {
+        try {
+            Point.getPoint(1, -9);
+            fail();
+        } catch (IncorrectCoordinatException e) {}
+    }
+     @Test
+    void testFailIfXIsGreaterThan3() {
+        try {
+            Point.getPoint(6, 2);
+            fail();
+        } catch (IncorrectCoordinatException e) {}
+    }
+     @Test
+    void testFailIfYIsGreaterThan3() {
+        try {
+            Point.getPoint(0, 9);
+            fail();
+        } catch (IncorrectCoordinatException e) {}
+    }
+
 }
