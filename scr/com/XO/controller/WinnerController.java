@@ -6,6 +6,7 @@ import com.XO.model.Point;
 
 public class WinnerController {
     public static Figure getWinner(final Field field){
+
         return  null;
     }
     public static Figure checkLineWinner(final Field field) {
@@ -35,5 +36,15 @@ public class WinnerController {
         }
 
         return  null;
+    }
+    public boolean fieldIsFull(final  Field field) {
+        int counter = 0;
+        for (int i = 0; i < field.getSize(); i++) {
+            for (int j = 0; j < field.getSize(); j++) {
+                if (field.getFigure(Point.getPoint(i,j)) != null) counter++;
+            }
+        }
+        if (counter == field.getSize() * field.getSize()) return true;
+        return false;
     }
 }
