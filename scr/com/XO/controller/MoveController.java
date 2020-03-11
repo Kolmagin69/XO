@@ -5,7 +5,7 @@ import com.XO.model.exceptions.IncorrectCoordinatException;
 
 public class MoveController {
 
-    public void applyFigure(final Field field, final Point point, final Figure figure)
+    public static void applyFigure(final Field field, final Point point, final Figure figure)
                             throws IncorrectCoordinatException {
 
         if(field.getFigure(point) != null)
@@ -17,7 +17,7 @@ public class MoveController {
 
 
 
-    public Figure currentFigure(final Field field) {
+    public static Figure currentFigure(final Field field) {
         int counter = 0;
 
         for (int i = 0; i < field.getSize(); i++) {
