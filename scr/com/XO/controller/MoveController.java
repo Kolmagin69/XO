@@ -18,15 +18,7 @@ public class MoveController {
 
 
     public static Figure currentFigure(final Field field) {
-        int counter = 0;
-
-        for (int i = 0; i < field.getSize(); i++) {
-            for (int j = 0; j < field.getSize(); j++) {
-                if(field.getFigure(Point.getPoint(i, j)) != null) counter++;
-            }
-        }
-
-        if(counter % 2 == 1) return Figure.O;
+        if(field.getCounterFigure() % 2 == 1) return Figure.O;
         return Figure.X;
     }
 
