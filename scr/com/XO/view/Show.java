@@ -5,7 +5,7 @@ import com.XO.model.*;
 
 public class Show {
 
-    public static void ShowField(final GameForTwo gameForTwo) {
+    public static void showField(final GameForTwo gameForTwo) {
         StringBuilder strLocal1 = new StringBuilder(Lines.TOP_LINE);
         for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
             if(j < gameForTwo.getField().getSize() - 1) {
