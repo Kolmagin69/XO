@@ -14,6 +14,9 @@ public class Show {
                 strLocal1.append(horizontalLine(j, gameForTwo.getField()) + Lines.BOTTOM_LINE);
             }
         }
+        System.out.println("Game name:" + gameForTwo.getName());
+        System.out.println("Player1 name: \"" + gameForTwo.getPlayerOne().getName() + "\" player figure: " + gameForTwo.getPlayerOne().getFigure());
+        System.out.println("Player2 name: \"" + gameForTwo.getPlayerTwo().getName() + "\" player figure: " + gameForTwo.getPlayerTwo().getFigure());
         System.out.println(strLocal1);
 
     }
