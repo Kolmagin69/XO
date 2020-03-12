@@ -5,16 +5,17 @@ import com.XO.model.*;
 
 public class Show {
 
-    public static void ShowField(final Field field) {
+    public static void ShowField(final GameForTwo gameForTwo) {
         StringBuilder strLocal1 = new StringBuilder(Lines.TOP_LINE);
-        for (int j = 0; j < field.getSize() ; j++) {
-            if(j < field.getSize() - 1) {
-                strLocal1.append(horizontalLine(j, field) + Lines.MIDEL_LINE);
+        for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
+            if(j < gameForTwo.getField().getSize() - 1) {
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + Lines.MIDEL_LINE);
             } else {
-                strLocal1.append(horizontalLine(j, field) + Lines.BOTTOM_LINE);
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + Lines.BOTTOM_LINE);
             }
         }
         System.out.println(strLocal1);
+
     }
 
     private static String horizontalLine(final int a, final Field field) {
