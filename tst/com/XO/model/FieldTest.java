@@ -87,7 +87,7 @@ class FieldTest {
     }
 
     @Test
-    void getCounterFigure() {
+    void testGetCounterFigure() {
         final Field field = new Field(3);
         field.setFigures(Point.X0_Y0, MoveController.currentFigure(field));
         final int actualNumberOfFigure1 = field.getCounterFigure();
