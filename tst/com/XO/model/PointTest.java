@@ -124,5 +124,12 @@ class PointTest {
             fail();
         } catch (IncorrectCoordinatException e) {}
     }
+    @Test
+    void testFailIfYIsGreaterThan4() {
+        try {
+            Point.getPoint(2, 3);
+            fail();
+        } catch (IncorrectCoordinatException e) {}
+    }
 
 }
