@@ -16,7 +16,7 @@ public class NameController {
     public static Player playerInput(final int count, final Figure figure)  {
         Player player;
         try {
-            player = new Player(playerNameInput(1), Figure.X);
+            player = new Player(playerNameInput(count), figure);
         } catch (IncorrectNameException e) {
             System.out.println("Incorrect player name. Wrong player name options:\n" +
                     "1 - \"\"\n" +
@@ -25,7 +25,7 @@ public class NameController {
                     "1 - \"Nikita\"\n" +
                     "2 - \" nIKiTA\"\n" +
                     "3 - \"N\"");
-            player = new Player(playerNameInput(1), Figure.X);
+            player = new Player(playerNameInput(count), figure);
         }
         return player;
     }
