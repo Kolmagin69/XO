@@ -7,7 +7,6 @@ import com.XO.model.Point;
 public class WinnerController {
     public static Figure getWinner(final Field field){
         if (checkLineWinner(field) != null) return checkLineWinner(field);
-        if (fieldIsFull(field)) return null;
         return  null;
     }
     public static Figure checkLineWinner(final Field field) {
