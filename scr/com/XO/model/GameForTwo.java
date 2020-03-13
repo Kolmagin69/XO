@@ -1,5 +1,7 @@
 package com.XO.model;
 
+import com.XO.model.exceptions.IncorrectNameException;
+
 public class GameForTwo {
     private Player playerOne;
     private Player playerTwo;
@@ -25,6 +27,11 @@ public class GameForTwo {
         return name;
     }
 
+    public String getNameFromFigure(final Figure figure) {
+        if(figure == playerOne.getFigure()) return  playerOne.getName();
+        return playerTwo.getName();
+    }
+
     public static Builder newBuider() {
         return new GameForTwo().new Builder();
     }
@@ -33,11 +40,15 @@ public class GameForTwo {
         }
 
         public Builder setPlayerOne(Player playerOne) {
+            if(playerTwo != null && playerTwo.getFigure() == playerOne.getFigure())
+                throw new IncorrectNameException("Try another player with another figure!");
             GameForTwo.this.playerOne = playerOne;
             return this;
         }
 
-        public Builder setPlayerTwo(Player playerTwo) {
+        public Builder setPlayerTwo(Player playerTwo) throws IncorrectNameException {
+            if(playerOne != null && playerTwo.getFigure() == playerOne.getFigure())
+                throw new IncorrectNameException("Try another player with another figure!");
             GameForTwo.this.playerTwo = playerTwo;
             return this;
         }
