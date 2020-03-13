@@ -41,14 +41,14 @@ public class GameForTwo {
 
         public Builder setPlayerOne(Player playerOne) throws IncorrectNameException {
             if(playerTwo != null && playerTwo.getFigure() == playerOne.getFigure())
-                throw new IncorrectNameException("Try another player with another figure!");
+                throw new IncorrectNameException("Try player with another figure!");
             GameForTwo.this.playerOne = playerOne;
             return this;
         }
 
         public Builder setPlayerTwo(Player playerTwo) throws IncorrectNameException {
             if(playerOne != null && playerTwo.getFigure() == playerOne.getFigure())
-                throw new IncorrectNameException("Try another player with another figure!");
+                throw new IncorrectNameException("Try player with another figure!");
             GameForTwo.this.playerTwo = playerTwo;
             return this;
         }
