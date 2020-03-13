@@ -39,7 +39,7 @@ public class GameForTwo {
         private Builder() {
         }
 
-        public Builder setPlayerOne(Player playerOne) {
+        public Builder setPlayerOne(Player playerOne) throws IncorrectNameException {
             if(playerTwo != null && playerTwo.getFigure() == playerOne.getFigure())
                 throw new IncorrectNameException("Try another player with another figure!");
             GameForTwo.this.playerOne = playerOne;
