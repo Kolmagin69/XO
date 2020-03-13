@@ -14,7 +14,7 @@ public class Move {
         final Field field = game.getField();
         final Figure winner = WinnerController.getWinner(field);
         if (winner != null) {
-            System.out.format("Winner is: %s\n", winner);
+            System.out.format("Winner is: \'%s\'\n", game.getNameFromFigure(winner));
             return false;
         }
         if (WinnerController.fieldIsFull(field)) {
@@ -22,7 +22,7 @@ public class Move {
             return false;
         }
         final Figure currentFigure = MoveController.currentFigure(field);
-        System.out.format("Please enter move point for: %s\n", currentFigure);
+        System.out.format("\'%s\'please enter move point for: %s\n", game.getNameFromFigure(currentFigure), currentFigure);
         Move move = new Move();
 
         MoveController.applyFigure(field, move.checkedPointOnField(field), currentFigure);
