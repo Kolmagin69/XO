@@ -14,10 +14,7 @@ public class Field implements Cloneable {
         this.size = size;
         figures = new Figure[size][size];
     }
-    public Field(final Figure[][] figures) {
-        size = figures.length;
-        this.figures = figures;
-    }
+
 
     public int getSize() {
         return size;
