@@ -9,15 +9,13 @@ public class Show {
         StringBuilder strLocal1 = new StringBuilder(Lines.TOP_LINE);
         for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
             if(j < gameForTwo.getField().getSize() - 1) {
-                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + Lines.MIDEL_LINE);
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + '\n' + Lines.MIDEL_LINE);
             } else {
-                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + Lines.BOTTOM_LINE);
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + '\n'  + Lines.BOTTOM_LINE)
+                         .append(numerationField(gameForTwo.getField()));
             }
         }
-        System.out.println("Game name:" + gameForTwo.getName());
-        System.out.println("Player1 name: \"" + gameForTwo.getPlayerOne().getName() + "\" player figure: " + gameForTwo.getPlayerOne().getFigure());
-        System.out.println("Player2 name: \"" + gameForTwo.getPlayerTwo().getName() + "\" player figure: " + gameForTwo.getPlayerTwo().getFigure());
-        System.out.println(strLocal1);
+       System.out.println(strLocal1);
 
     }
 
@@ -32,10 +30,44 @@ public class Show {
                 strLocal.append(appendSpace(figureInMetod.toString()));
             }
         }
-        return Lines.DASH_VERTICAL + strLocal.toString() + "\n";
+        return Lines.DASH_VERTICAL + strLocal.toString();
     }
     private  static String appendSpace(final String str) {
         return "  " + str + "  " + Lines.DASH_VERTICAL;
+    }
+
+    public static void firstShowField(GameForTwo gameForTwo) {
+        System.out.println("Game name:" + gameForTwo.getName());
+
+        System.out.println("Player1 name: \""
+                + gameForTwo.getPlayerOne().getName()
+                + "\" player figure: "
+                + gameForTwo.getPlayerOne().getFigure());
+
+        System.out.println("Player2 name: \""
+                + gameForTwo.getPlayerTwo().getName()
+                + "\" player figure: "
+                + gameForTwo.getPlayerTwo().getFigure());
+
+        StringBuilder strLocal1 = new StringBuilder(Lines.TOP_LINE);
+        for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
+
+            if(j < gameForTwo.getField().getSize() - 1) {
+                strLocal1.append(Lines.CENTER_LINE + " " + j + '\n' + Lines.MIDEL_LINE);
+            } else {
+                strLocal1.append(Lines.CENTER_LINE + " " + j + '\n' + Lines.BOTTOM_LINE )
+                        .append(numerationField(gameForTwo.getField()));
+            }
+        }
+        System.out.println(strLocal1);
+
+    }
+    private static String numerationField(final Field field) {
+        StringBuilder localString = new StringBuilder(" ");
+        for (int i = 0; i < field.getSize(); i++) {
+            localString.append("  " + i + "   ");
+        }
+        return localString.toString();
     }
 
     private static class Lines{
@@ -72,7 +104,11 @@ public class Show {
                 DOWN_MIDEL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL,
                 DOWN_MIDEL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL, DASH_HORIZONTAL,
                 DOWN_RIGHT, '\n'});
+
+        private static final String CENTER_LINE = new String(DASH_VERTICAL + "     "
+                + DASH_VERTICAL + "     " + DASH_VERTICAL + "     " + DASH_VERTICAL );
         }
+
 
     }
 
