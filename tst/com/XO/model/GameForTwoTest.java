@@ -1,5 +1,6 @@
 package com.XO.model;
 
+import com.XO.model.exceptions.IncorrectNameException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -42,4 +43,39 @@ class GameForTwoTest {
     }
 
 
+    @Test
+    void getNameFromFigure() {
+        final String actualName = expectedGame.getNameFromFigure(Figure.X);
+        assertEquals("Nikita", actualName);
+        final  String actualName1 = expectedGame.getNameFromFigure(Figure.O);
+        assertEquals("Kristina", actualName1);
+
+    }
+
+    @Test
+    void testFailWhenTrySetPlayerWithSameFigure() {
+       final Player expectedPlayerX1 = new Player("Nikita", Figure.X);
+       final Player expectedPlayerO1 = new Player("Kristina", Figure.X);
+       try {
+            final GameForTwo expectedGame1 = GameForTwo
+                   .newBuider()
+                    .setPlayerTwo(expectedPlayerO1)
+                    .setPlayerOne(expectedPlayerX1)
+                    .build();
+            fail();
+       } catch (IncorrectNameException e) {}
+
+        final Player expectedPlayerX2 = new Player("Nikita", Figure.O);
+        final Player expectedPlayerO2 = new Player("Kristina", Figure.O);
+        try {
+            final GameForTwo expectedGame1 = GameForTwo
+                    .newBuider()
+
+                    .setPlayerOne(expectedPlayerX2)
+                    .setPlayerTwo(expectedPlayerO2)
+                    .build();
+            fail();
+        } catch (IncorrectNameException e) {}
+
+    }
 }
