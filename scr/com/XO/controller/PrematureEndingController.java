@@ -10,9 +10,8 @@ public class PrematureEndingController {
 
 
     public static boolean noMoveToWin(final GameForTwo game) {
-        GameForTwo gameX = game;
-        GameForTwo gameO = game;
-        if (ItsFigureCanWin(Figure.X, gameX) || ItsFigureCanWin(Figure.O, gameO)) return false;
+
+        if (ItsFigureCanWin(Figure.X, game) || ItsFigureCanWin(Figure.O, game)) return false;
         return true;
     }
     private static boolean ItsFigureCanWin(final Figure figure, final GameForTwo game) {

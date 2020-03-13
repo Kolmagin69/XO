@@ -9,9 +9,9 @@ public class Show {
         StringBuilder strLocal1 = new StringBuilder(Lines.TOP_LINE);
         for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
             if(j < gameForTwo.getField().getSize() - 1) {
-                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + '\n' + Lines.MIDEL_LINE);
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + "(X)" + '\n' + Lines.MIDEL_LINE);
             } else {
-                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + '\n'  + Lines.BOTTOM_LINE)
+                strLocal1.append(horizontalLine(j, gameForTwo.getField()) + " " + j + "(X)" + '\n'  + Lines.BOTTOM_LINE)
                          .append(numerationField(gameForTwo.getField()));
             }
         }

@@ -3,8 +3,8 @@ package com.XO.model;
 
 import com.XO.model.exceptions.*;
 
-public class Field {
-    private final int size;
+public class Field implements Cloneable {
+    private int size;
     private int counterFigure = 0;
     private final Figure[][] figures;
 
@@ -13,6 +13,10 @@ public class Field {
     public Field(int size) {
         this.size = size;
         figures = new Figure[size][size];
+    }
+    public Field(final Figure[][] figures) {
+        size = figures.length;
+        this.figures = figures;
     }
 
     public int getSize() {
@@ -42,7 +46,8 @@ public class Field {
         return counterFigure;
     }
 
-
-
-
+    @Override
+    protected Field clone() throws CloneNotSupportedException {
+        return (Field) super.clone();
+    }
 }
