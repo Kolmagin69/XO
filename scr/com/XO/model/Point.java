@@ -32,7 +32,7 @@ public enum Point {
     public static Point getPoint(final int x, final int y)
             throws IncorrectCoordinatException {
 
-        if(x < 0 || x > 3 || y < 0 || y > 3) {
+        if(x < 0 || x >= 3 || y < 0 || y >= 3) {
             throw new IncorrectCoordinatException("\n\"Invalid values!\"\n\"Possible values: x,y - 0, 1, 2.\"");
         }
         if(x == 0 && y ==0) return X0_Y0;

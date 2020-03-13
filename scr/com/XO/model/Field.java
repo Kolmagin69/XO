@@ -20,7 +20,7 @@ public class Field {
     }
 
     public void setFigures(final Point point, final Figure figure)
-            throws IncorrectCoordinatException {
+            throws IncorrectFigureException {
 
         if(figure == null)
             throw new IncorrectFigureException
