@@ -24,16 +24,32 @@ public class Move {
         final Figure currentFigure = MoveController.currentFigure(field);
         System.out.format("Please enter move point for: %s\n", currentFigure);
         Move move = new Move();
-        final Point point = move.askPoint();
-        try {
-            MoveController.applyFigure(field, point, currentFigure);
-        } catch (final IncorrectCoordinatException e) {
-            System.out.println("Point is invalid!");
-        }
+
+        MoveController.applyFigure(field, move.checkedPointOnField(field), currentFigure);
+
         return true;
     }
 
-    private  Point askPoint() {
-        return Point.getPoint(consoleCoordinateScanner.nextCoordinate("X") , consoleCoordinateScanner.nextCoordinate("Y") );
+    private  Point askPoint(final Field field) {
+        return Point.getPoint(checkedPointCoordinate(field,"X"), checkedPointCoordinate(field,"Y"));
+    }
+    private int checkedPointCoordinate(final Field field, final String cordinate) {
+        int pointNum = consoleCoordinateScanner.nextCoordinate(cordinate);
+        while (pointNum < 0 || pointNum >= field.getSize()) {
+            System.out.format("!!!Try a value from 0 to %d\n", field.getSize() - 1);
+            pointNum = consoleCoordinateScanner.nextCoordinate(cordinate);
+
+        }
+        return pointNum;
+    }
+    private Point checkedPointOnField(final Field field) {
+        Move move = new Move();
+        Point localPoint = move.askPoint(field);
+        while (field.getFigure(localPoint) != null) {
+            System.out.println("!!!Field is't free.Try another point.");
+            localPoint = move.askPoint(field);
+
+        }
+        return localPoint;
     }
 }
