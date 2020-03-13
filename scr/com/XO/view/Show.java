@@ -53,9 +53,9 @@ public class Show {
         for (int j = 0; j < gameForTwo.getField().getSize() ; j++) {
 
             if(j < gameForTwo.getField().getSize() - 1) {
-                strLocal1.append(Lines.CENTER_LINE + " " + j + '\n' + Lines.MIDEL_LINE);
+                strLocal1.append(Lines.CENTER_LINE + " " + j + "(X)" + '\n' + Lines.MIDEL_LINE);
             } else {
-                strLocal1.append(Lines.CENTER_LINE + " " + j + '\n' + Lines.BOTTOM_LINE )
+                strLocal1.append(Lines.CENTER_LINE + " " + j + "(X)" + '\n' + Lines.BOTTOM_LINE )
                         .append(numerationField(gameForTwo.getField()));
             }
         }
@@ -65,7 +65,7 @@ public class Show {
     private static String numerationField(final Field field) {
         StringBuilder localString = new StringBuilder(" ");
         for (int i = 0; i < field.getSize(); i++) {
-            localString.append("  " + i + "   ");
+            localString.append(" " + i + "(Y) ");
         }
         return localString.toString();
     }
