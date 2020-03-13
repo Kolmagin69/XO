@@ -23,7 +23,7 @@ public class Move {
             return false;
         }
         final Figure currentFigure = MoveController.currentFigure(field);
-        System.out.format("\'%s\'please enter move point for: %s\n", game.getNameFromFigure(currentFigure), currentFigure);
+        System.out.format("\'%s\' please enter move point for: %s\n", game.getNameFromFigure(currentFigure), currentFigure);
         Move move = new Move();
 
         MoveController.applyFigure(field, move.checkedPointOnField(field), currentFigure);
