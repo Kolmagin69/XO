@@ -52,10 +52,7 @@ public class WinnerController {
         counterX = 0;
         return  null;
     }
-    public static boolean fieldIsFull(final Field field) {
-        if (field.getCounterFigure() == field.getSize() * field.getSize()) return true;
-        return false;
-    }
+
 
 
 }
