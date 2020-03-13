@@ -1,6 +1,7 @@
 package com.XO.view;
 
 import com.XO.controller.MoveController;
+import com.XO.controller.PrematureEndingController;
 import com.XO.controller.WinnerController;
 import com.XO.model.*;
 import com.XO.model.exceptions.IncorrectCoordinatException;
@@ -17,7 +18,7 @@ public class Move {
             System.out.format("Winner is: \'%s\'\n", game.getNameFromFigure(winner));
             return false;
         }
-        if (WinnerController.fieldIsFull(field)) {
+        if (PrematureEndingController.fieldIsFull(field)) {
             System.out.println("No winner and no moves left!");
             return false;
         }
